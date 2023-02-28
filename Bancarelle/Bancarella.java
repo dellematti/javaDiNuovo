@@ -18,7 +18,7 @@ public class Bancarella{
 
     public final String proprietario; 
     private final Inventario inventario;         
-    private final Listino listino;           //dopo vedo se listino public o private
+    private final Listino listino;          
 
 
 
