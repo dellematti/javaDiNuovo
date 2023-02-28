@@ -16,7 +16,7 @@ public class Bancarella{
 
     // campi
 
-    public final String proprietario; 
+    private final String proprietario; 
     private final Inventario inventario;         
     private final Listino listino;          
 
@@ -29,11 +29,11 @@ public class Bancarella{
         Objects.requireNonNull(proprietario, "proprietario non può essere null");
         Objects.requireNonNull(inventario, "inventario non può essere null");
         Objects.requireNonNull(listino, "listino non può essere null");
-        if ( proprietario == "") throw new IllegalArgumentException ("proprietario non può essere vuoto");
+        if ( proprietario.equals("")) throw new IllegalArgumentException ("proprietario non può essere vuoto");
 
         this.proprietario = proprietario;
-        this.inventario = inventario;
-        this.listino = listino;
+        this.inventario = inventario;              // NO
+        this.listino = listino;                    // e ancora no
     }
 
 
