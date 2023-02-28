@@ -13,8 +13,12 @@ public class Test {
 
         System.out.println(alias);
 
-        for (Indirizzo i : alias) System.out.println(i + " ciao");      //posso farlo perchè Alias è Iterable
+        for (Indirizzo i : alias){    //non mi cambia direttamente gli elementi di alias, (ok)
+            i = null;
+            System.out.println(i);
+        }  
 
+        for (Indirizzo i : alias) System.out.println(i + " ciao");      //posso farlo perchè Alias è Iterable
         String nome = alias.getNome();
         nome = "ole";
 
