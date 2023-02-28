@@ -27,8 +27,8 @@ public class Bancarella{
 
     public Bancarella (final String proprietario, final Inventario inventario, final Listino listino ){
         this.proprietario = Objects.requireNonNull(proprietario, "proprietario non può essere null");
-        this.inventario = Objects.requireNonNull(inventario, "inventario non può essere null");
-        this.listino = Objects.requireNonNull(listino, "listino non può essere null");
+        this.inventario = Objects.requireNonNull(inventario, "inventario non può essere null");  //NON SI PUO' FARE, DEVO FARE UNA COPIA DI INVENTARIO
+        this.listino = Objects.requireNonNull(listino, "listino non può essere null");   //questo si può, listino è mutabile a differenza di inventario
         if ( proprietario.equals("")) throw new IllegalArgumentException ("proprietario non può essere vuoto");
     }
 
