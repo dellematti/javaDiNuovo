@@ -1,0 +1,63 @@
+### Caso elementare
+
+Nel caso più semplice, la sorgente richiede al canale l'inoltro di ciascun
+pacchetto (nell'ordine in cui li ricava dal messaggio) una sola volta e per
+ciascun pacchetto il canale richiede al destinatario di riceverlo una sola
+volta, nell'ordine in cui gli è stato richiesto l'inoltro, senza modificarne il
+contenuto. *In tale circostanza i campi sequenza e checksum dei pacchetti
+possono essere di fatto del tutto ignorati*.
+
+**Vedi anche**: la sezione [Da stringhe a byte e
+viceversa](#da-stringhe-a-byte-e-viceversa) (che trovate nel seguito della
+traccia) contiene un suggerimento su come implementare codifica e decodifica.
+
+
+
+
+
+
+
+public interface Destinatario {
+    Parametri parametri();
+    boolean ricevi(Pacchetto pacchetto);
+}
+
+
+public interface Canale {
+    Parametri parametri();
+    boolean inoltra(Pacchetto pacchetto);
+}
+
+
+public interface Sorgente {
+    void trasmetti(String messaggio);
+}
+
+
+SORGENTE : trasmetti riceve il messaggio e lo converte in pacchetti, ( quindi in base ai PARAMETRI 
+           devo riempire i pacchetti  ) 
+
+
+
+la sorgente ( dopo aver decodificato) chiede quindi al canale di *inoltrarli* al destinatario che, una 
+volta *ricevuti*, li decodificherà per ricostruire il messaggio.
+
+sorgente chiama inoltra di canale passandogli un pacchetto alla ovlta ( nel caso semplice)
+
+ora canale chiama ricevi di destinatario ( lo chiama dentro inoltra ?)
+
+
+
+MAIN 
+public static void main(String[] args) {
+
+  final int dimensione = Integer.parseInt(args[0]);
+  final Charset charset = Charset.forName(args[1]);
+  final Parametri parametri = new Parametri(dimensione, charset, new Adler32());
+
+  final Destinatario destinatario = new ...(parametri);
+  final Canale canale = new ..(destinatario);
+  final Sorgente sorgente = new ...(canale);
+  sorgente.trasmetti(args[2]);
+}
+``
