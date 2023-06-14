@@ -10,13 +10,11 @@ import java.util.*;
 */
 
 public class Indirizzo {
-
-    /**
-    * AF : un indirizzo è rappresentato dalla sua parte locale, seguita da "@", seguita dalla sua parte dominio
-    * RI : locale != null
-    *      dominio != null
-    */
-
+    
+    // AF : un indirizzo è rappresentato dalla sua parte locale, seguita da "@", seguita dalla sua parte dominio
+    // RI : locale != null
+    //      dominio != null
+    
 
     // CAMPI
 
