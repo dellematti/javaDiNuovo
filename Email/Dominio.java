@@ -10,11 +10,11 @@ import java.util.function.Predicate;
 
 public class Dominio{
 
-    /**
-    * AF : Dominio è rappresentato unicamente da dominio, che è banalmente la parte del dominio dell indirizzo email
-    * RI : dominio deve soddisfare i vincoli dell espressione regolare
-    *      dominio != null
-    */
+    
+    // AF : Dominio è rappresentato unicamente da dominio, che è banalmente la parte del dominio dell indirizzo email
+    // RI : dominio deve soddisfare i vincoli dell espressione regolare
+    //      dominio != null
+    
 
 
     // CAMPI
