@@ -18,9 +18,9 @@ public class Album implements Iterable<Album.Brano> {
 
 
         
-        //   AF: un brano viene rappresentato da un titolo e da una sua durata
+        //   AF: titolo del brano rappresenta banalmente il titolo del brano, mentre durata raprpesenta la sua durata
         //   RI: titolo non può essere una stringa vuota
-        //       titolo non può essere null                    //lo scrivo anche qua lo stesso, anche se poi l ho messo nel costruttore
+        //       titolo non può essere null                   
         //       durata non può essere di zero secondi
         //       durata non può essere null
          
@@ -105,20 +105,20 @@ public class Album implements Iterable<Album.Brano> {
 
 
     }
-
-
-
-
+    // da qua inizia l album
 
 
     
-    //  AF: un album è rappresentato dai suoi brani, e dalla durata complessiva
+    //  AF: titolo rappresenta il titolo dell album e il valore di durata rappresenta la sua durata, l' i-esimo elementi di brani rappresenta il
+    //      brano in posizione i all interno dell album
     //  RI:  titolo non può essere null
     //       titolo non può essere vuoto
     //       durata non può essere di zero secondi
     //       durata non può essere vuota
     //       brani non può essere null
     //       brani non può contenere elementi null
+    //       durata deve essere la somma delle durate dei singoli brani
+    //       (si potrebbe aggiungere che i brani non possono essere uguali)
     
 
 
@@ -249,7 +249,7 @@ public class Album implements Iterable<Album.Brano> {
     public Iterator<Album.Brano> iterator() {
         return Collections.unmodifiableCollection(Arrays.asList(this.brani)).iterator();
     }
-    // trasformo l rray in una lista e poi restituisco l iteratore della lista
+    // trasformo l array in una lista e poi restituisco l iteratore della lista
     // avrei anche potuto fare io un iteratore custom, ma non avendo condizioni particolari non ha senso
 
 
