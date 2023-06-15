@@ -11,7 +11,7 @@ import java.util.*;
 public class Alias implements Iterable<Indirizzo>  {
 
 
-    //invece di fare una classe anonima posso anche fare una classe inner come questa, ma serve più codice
+    // esempio di inner class per l iteratore, a differenza della classe anonima
     /**                 
     * OVERVIEW: classe (generatore) che implementa Iterator
     */
@@ -43,13 +43,13 @@ public class Alias implements Iterable<Indirizzo>  {
 
 
 
-    /**
-    * AF : un alias è rappresentato da nome e dominio che sono banalmente il nome dell alias e il dominio degli indirizzi email
-    *      ad esso associati, e dalle parti locali cioè l insieme delle parti locali che sono associate all alias 
-    * RI : nome != null e non vuoto
-    *      dominio != null
-    *      partiLocali != null, ogni elemento != null    (non serve che specificare che gli elementi siano unici dato che è un set)
-    */
+    
+    // AF : un alias è rappresentato da nome e dominio che sono banalmente il nome dell alias e il dominio degli indirizzi email
+    //      ad esso associati, e dalle parti locali cioè l insieme delle parti locali che sono associate all alias 
+    // RI : nome != null e non vuoto
+    //      dominio != null
+    //      partiLocali != null, ogni elemento != null    (non serve che specificare che gli elementi siano unici dato che è un set)
+    
 
     // CAMPI
 
@@ -161,11 +161,7 @@ public class Alias implements Iterable<Indirizzo>  {
     }
 
 
-    /**
-    * restituisce un iteratore che scorre sull elenco delle parti locali dell Alias (in nessun ordine in particolare)
-    *
-    * @return un iteratore sulle parti locali di alias
-    */
+    @Override
     public Iterator<Indirizzo> iterator() {
         return new Iterator <Indirizzo> () {
 
@@ -192,6 +188,13 @@ public class Alias implements Iterable<Indirizzo>  {
             }
         };
     }
+
+    
+    /**
+    * restituisce un iteratore che scorre sull elenco delle parti locali dell Alias (in nessun ordine in particolare)
+    *
+    * @return un iteratore sulle parti locali di alias
+    */      //serve la documentazione o è override?
     // public Iterator<Indirizzo> iterator() {  //se invece della classe anonima facessi la inner, il metodo sarebbe così
     //     return new AliasIterator();
     // }
