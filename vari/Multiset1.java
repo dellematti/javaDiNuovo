@@ -16,6 +16,7 @@ public class Multiset1 implements StringMultiSet {
     //     elementoMolteplicità != null
     //     elementoMolteplicità non contiene null
     //     elementoMolteplicità non ha elementi associati a numeri <= 0
+    //     cardinalità è uguale alla somma dei value presenti in elementoMolteplicità
 
 
     /**
