@@ -11,7 +11,7 @@ import java.util.Objects;
 public class Cassa {
 
     /**importi presenti nella cassa */
-    Map<Valuta, Integer> importi; 
+    private Map<Valuta, Integer> importi; 
 
     // AF: cassa dove per ogni valuta abbiamo una chiave di importi e la quantità
     //     di denaro in quella valuta = value associato alla key
